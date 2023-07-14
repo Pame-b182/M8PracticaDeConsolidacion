@@ -1,22 +1,55 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '@/views/HomeView.vue'
+import VestuarioHombre from '@/views/VestuarioHombreView.vue'
+import VestuarioMujer from '@/views/VestuarioMujerView.vue'
+import Electronica from '@/views/ElectronicaView.vue'
+import Carrito from '@/views/CarritoView.vue'
+import FormPagar from '@/views/FormPagarView.vue'
+import ConfirmacionCompra from '@/views/ConfirmacionView.vue'
+import NotFound from '@/views/NotFoundView.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'home',
+    name: 'Home',
     component: HomeView
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/vestuariohombre',
+    name: 'VestuarioHombre',
+    component: VestuarioHombre,
+  },
+  {
+    path: '/vestuariomujer',
+    name: 'VestuarioMujer',
+    component: VestuarioMujer,
+  },
+  {
+    path: '/electronica',
+    name: 'Electronica',
+    component: Electronica,
+  },
+  {
+    path: '/carrito',
+    name: 'Carrito',
+    component: Carrito,
+  },
+  {
+    path: '/pagar',
+    name: 'Pagar',
+    component: FormPagar,
+  },
+  {
+    path: '/confirmacion',
+    name: 'Confirmacion',
+    component: ConfirmacionCompra,
+  },
+  {
+    path: '*',
+    component: NotFound
   }
 ]
 
